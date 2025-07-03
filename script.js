@@ -1,26 +1,22 @@
-const API_URL = 'https://script.google.com/macros/s/AKfycbwOEjfkJFgQyCEQCy_Pur7E71t2ieoTAhjfYpq3o42izVnBxdRISO3dK4faUBfMnJoDAQ/exec'; // Replace this
+const API_URL = 'https://script.google.com/macros/s/AKfycbwOEjfkJFgQyCEQCy_Pur7E71t2ieoTAhjfYpq3o42izVnBxdRISO3dK4faUBfMnJoDAQ/exec';
 
-// Submit form from admin.html
 document.getElementById('timetableForm')?.addEventListener('submit', async function (e) {
   e.preventDefault();
   const formData = new FormData(e.target);
-  const data = Object.fromEntries(formData.entries());
 
   const response = await fetch(API_URL, {
     method: 'POST',
-    body: JSON.stringify(data),
-    headers: { 'Content-Type': 'application/json' }
+    body: formData // ✅ No headers = No preflight = No CORS issue
   });
 
   if (response.ok) {
-    alert('Timetable entry submitted!');
+    alert('Submitted!');
     e.target.reset();
   } else {
-    alert('Error submitting timetable.');
+    alert('Submission failed.');
   }
 });
 
-// Load timetable on index.html
 async function loadTimetable() {
   const program = document.getElementById('prog').value;
   const semester = document.getElementById('sem').value;
