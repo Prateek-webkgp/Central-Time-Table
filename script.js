@@ -46,7 +46,8 @@ async function loadTimetable() {
       <thead class="table-dark">
         <tr>
           <th>Day</th>
-          <th>Time</th>
+          <th>Start Time</th>
+          <th>Duration</th>
           <th>Course</th>
           <th>Faculty</th>
           <th>Room</th>
@@ -57,7 +58,8 @@ async function loadTimetable() {
     data.forEach(row => {
       html += `<tr>
         <td>${row.Day}</td>
-        <td>${row.Time}</td>
+        <td>${row.StartTime}</td>
+        <td>${row.Duration}</td>
         <td>${row.Course}</td>
         <td>${row.Faculty}</td>
         <td>${row.Room}</td>
