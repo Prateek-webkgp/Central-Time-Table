@@ -84,7 +84,13 @@
 
     <button class="btn btn-primary w-100 mb-4" onclick="loadTimetable()">Show Timetable</button>
 
-    <div id="output"></div>
+    <div id="spinner" class="text-center mt-4" style="display:none;">
+  <div class="spinner-border text-info" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<div id="output" class="mt-4"></div>
+
   </div>
 
   <script src="script.js"></script>
