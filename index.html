@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Central Timetable Viewer</title>
+  <title>View Timetable</title>
+  <meta charset="UTF-8">
 </head>
 <body>
   <h2>View Timetable</h2>
-  <label>Program:</label>
+
+  <label for="prog">Program:</label>
   <input id="prog" placeholder="e.g., B.Tech CSE" />
-  <label>Semester:</label>
+
+  <label for="sem">Semester:</label>
   <input id="sem" placeholder="e.g., 3" />
+
   <button onclick="loadTimetable()">Show</button>
 
   <div id="output" style="margin-top: 20px;"></div>
